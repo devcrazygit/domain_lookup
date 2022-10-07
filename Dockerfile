@@ -9,9 +9,9 @@ COPY package*.json ./
 # RUN npm ci --only=production
 
 COPY prisma ./prisma/
-COPY .env.example ./.env
 COPY tsconfig.json ./
 COPY . .
+COPY .env.example ./.env
 
 RUN npm install
 

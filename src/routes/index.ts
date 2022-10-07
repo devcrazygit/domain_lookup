@@ -1,4 +1,5 @@
 import { NextFunction, Request, Response } from "express";
+import { RootController } from "../api/root.controller";
 import { HistoryController } from "../api/v1/history.controller";
 import { ToolsController } from "../api/v1/tools.controller";
 import validate from "../middleware/validate";
@@ -13,11 +14,18 @@ type Route = {
     req: Request,
     res: Response,
     next: NextFunction
-  ) => Promise<any>)[];
+  ) => Promise<void>)[];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   handler: (data: any) => Promise<any>;
 };
 
 const routes: Route[] = [
+  {
+    name: "Index",
+    method: "get",
+    path: "/",
+    handler: RootController.get,
+  },
   {
     name: "Lookup domain",
     method: "get",
