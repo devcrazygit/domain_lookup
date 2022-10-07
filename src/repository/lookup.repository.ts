@@ -1,6 +1,6 @@
 import { Lookup } from "@prisma/client";
 import { prisma } from "../models";
-import { LookupModel } from "../models/lookupModel";
+import { LookupModel } from "../models/lookup.model";
 
 export const LookupRepository = {
   async save(lookupData: LookupModel): Promise<Lookup> {

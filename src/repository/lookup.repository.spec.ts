@@ -1,6 +1,6 @@
 import { faker } from "@faker-js/faker";
 import { prisma } from "../models";
-import { LookupModel } from "../models/lookupModel";
+import { LookupModel } from "../models/lookup.model";
 import { LookupRepository } from "./lookup.repository";
 
 describe("LookupRepository", () => {
