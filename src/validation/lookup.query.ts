@@ -4,5 +4,6 @@ export const LookupQuerySchema: Schema = {
   domain: {
     in: ["query"],
     isString: true,
+    notEmpty: true,
   },
 };

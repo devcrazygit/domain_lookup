@@ -1,7 +1,9 @@
-import { Request } from "express";
+import { lookupResponse } from "../../models/lookup.model";
+import { LookupRepository } from "../../repository/lookup.repository";
 
 export const HistoryController = {
-  get: async (req: Request) => {
-    return;
+  get: async () => {
+    const lookups = await LookupRepository.getHistory();
+    return lookupResponse(lookups);
   },
 };

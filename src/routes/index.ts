@@ -2,6 +2,7 @@ import { NextFunction, Request, Response } from "express";
 import { HistoryController } from "../api/v1/history.controller";
 import { ToolsController } from "../api/v1/tools.controller";
 import validate from "../middleware/validate";
+import { IpV4ValidateRequestSchema } from "../validation/ip_validate.request";
 import { LookupQuerySchema } from "../validation/lookup.query";
 
 type Route = {
@@ -28,6 +29,7 @@ const routes: Route[] = [
     name: "Simple IP validation",
     method: "post",
     path: "/v1/tools/validate",
+    middleware: [validate(IpV4ValidateRequestSchema)],
     handler: ToolsController.validate,
   },
   {

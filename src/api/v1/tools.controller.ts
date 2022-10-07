@@ -1,6 +1,7 @@
 import { Request } from "express";
 import { matchedData } from "express-validator";
 import { resolveDnsLookup } from "../../helper/dns_lookup.helper";
+import { validateIpV4 } from "../../helper/ip.helper";
 import { lookupResponse } from "../../models/lookup.model";
 import { LookupRepository } from "../../repository/lookup.repository";
 
@@ -17,6 +18,10 @@ export const ToolsController = {
     return lookupResponse(lookup);
   },
   validate: async (req: Request) => {
-    return;
+    const { ip } = matchedData(req);
+    console.log({ ip });
+    return {
+      status: validateIpV4(ip),
+    };
   },
 };
