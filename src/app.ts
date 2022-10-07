@@ -6,6 +6,9 @@ import { CommonError } from "./exception/common.error";
 import routes from "./routes";
 import swaggerDocument from "./swagger.json";
 
+import dotenv from "dotenv";
+dotenv.config();
+
 const app = express();
 
 app.use(bodyParser.json());

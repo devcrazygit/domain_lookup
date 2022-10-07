@@ -19,7 +19,6 @@ export const ToolsController = {
   },
   validate: async (req: Request) => {
     const { ip } = matchedData(req);
-    console.log({ ip });
     return {
       status: validateIpV4(ip),
     };
