@@ -5,10 +5,10 @@
 replicaCount: 1
 
 image:
-  repository: nginx
+  repository: devcrazy/domain-lookup
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  tag: "1.0.0"
 
 imagePullSecrets: []
 nameOverride: ""
@@ -16,7 +16,7 @@ fullnameOverride: ""
 
 serviceAccount:
   # Specifies whether a service account should be created
-  create: true
+  create: false
   # Annotations to add to the service account
   annotations: {}
   # The name of the service account to use.
@@ -40,7 +40,9 @@ securityContext:
 
 service:
   type: NodePort
-  port: 80
+  exposePort: 30000
+  targetPort: 3000
+  internalPort: 3080
 
 ingress:
   enabled: false
