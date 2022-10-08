@@ -9,6 +9,7 @@ It is fully dockerized and helm chart template is prepared for kubernetes deploy
 ## Technology Stack
 
 - Node.js
+- TypeScript
 - MySQL
 - Docker and Docker Compose
 - Kubernetes
