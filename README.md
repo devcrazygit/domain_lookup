@@ -1,4 +1,4 @@
-![CI status](https://github.com/devcrazygit/domain_lookup.git/actions/workflows/main.yml/badge.svg)
+![CI status](https://github.com/devcrazygit/domain_lookup/actions/workflows/main.yml/badge.svg)
 
 # Domain Lookup
 
